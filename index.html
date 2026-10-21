@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>K-FOOD TRIP | 뿌링클 & 양념치킨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e8321e;--ink:#1b1210;--cream:#fff3dc;--yellow:#ffc928;--orange:#ff7a1a}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:"Noto Sans JP","Noto Sans KR",sans-serif;font-weight:500;overflow-x:hidden}
+.disp{font-family:"Dela Gothic One","Noto Sans JP",sans-serif;font-weight:400}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;mix-blend-mode:normal}
+nav b{background:var(--ink);color:var(--yellow);padding:6px 12px;border-radius:99px;font-size:13px}
+nav button{border:2px solid var(--ink);background:var(--cream);border-radius:99px;padding:6px 14px;font:700 13px inherit;font-family:inherit;cursor:pointer}
+/* hero */
+.hero{min-height:100svh;background:var(--red);color:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:90px 20px 60px;position:relative;overflow:hidden}
+.hero .tag{align-self:flex-start;background:var(--yellow);color:var(--ink);font-weight:900;padding:6px 14px;border-radius:99px;transform:rotate(-3deg);margin-bottom:18px}
+.hero h1{font-size:clamp(56px,16vw,150px);line-height:.95;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--yellow);display:block}
+.hero p{margin-top:22px;font-size:clamp(16px,3.4vw,22px);max-width:30em;line-height:1.7}
+.blob{position:absolute;border-radius:50%;background:var(--orange);opacity:.55;filter:blur(2px)}
+.b1{width:60vw;height:60vw;max-width:520px;max-height:520px;right:-18vw;top:8vh}
+.b2{width:30vw;height:30vw;max-width:260px;max-height:260px;right:12vw;bottom:-8vw;background:var(--yellow);opacity:.8}
+.hero>*{position:relative}
+.hero>.blob{position:absolute}
+.hero .intro{font-weight:900;font-size:clamp(20px,5vw,32px);color:var(--yellow)}.hero .pic{width:min(70vw,340px);aspect-ratio:1;object-fit:cover;border-radius:50%;border:6px solid var(--cream);box-shadow:10px 10px 0 var(--ink);transform:rotate(6deg);margin-top:26px;align-self:flex-end}.hero .cta{display:inline-block;margin-top:28px;background:var(--cream);color:var(--ink);text-decoration:none;font-weight:900;padding:14px 26px;border-radius:99px;box-shadow:0 5px 0 var(--ink);align-self:flex-start;transition:transform .15s,box-shadow .15s}
+.hero .cta:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+/* marquee */
+.mq{background:var(--ink);color:var(--yellow);overflow:hidden;white-space:nowrap;padding:12px 0;font-size:20px}
+.mq span{display:inline-block;padding-right:2em;animation:m 18s linear infinite}
+@keyframes m{to{transform:translateX(-100%)}}
+/* menu */
+section{padding:72px 20px;max-width:1000px;margin:0 auto}
+h2{font-size:clamp(32px,8vw,56px);margin-bottom:8px}
+.lead{margin-bottom:34px;opacity:.75}
+.cards{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{border:3px solid var(--ink);border-radius:26px;padding:26px;background:#fff;box-shadow:8px 8px 0 var(--ink);transition:transform .2s}
+.card:hover{transform:translate(-3px,-3px)}
+.ph{aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:3px solid var(--ink);background:var(--cream);display:grid;place-items:center;margin-bottom:6px}.ph img{width:100%;height:100%;object-fit:cover;grid-area:1/1}.ph img[src$="cola.jpg"]{object-fit:contain;background:#f4f4f4}.credit a{color:inherit}.ph .ico{grid-area:1/1;font-size:64px;display:none}.ph.no img{display:none}.ph.no .ico{display:block}
+.card h3{font-size:26px;margin:14px 0 4px}
+.card .ko{font-size:14px;opacity:.6;margin-bottom:12px}
+.card p{line-height:1.7;font-size:15px;min-height:3.4em}
+.price{display:flex;align-items:baseline;gap:4px;margin-top:16px;color:var(--red)}
+.price b{font-size:52px;font-family:"Dela Gothic One";font-weight:400}
+.card.y{background:var(--yellow)}.card.y .price{color:var(--ink)}
+.card.c{background:var(--ink);color:var(--cream);box-shadow:8px 8px 0 var(--red)}.card.c .price{color:var(--yellow)}
+/* set */
+.set{margin-top:30px;border:3px dashed var(--ink);border-radius:22px;padding:22px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;background:var(--cream)}
+.set b{font-size:20px}
+.set span{font-family:"Dela Gothic One";font-size:34px;color:var(--red)}
+/* info */
+.info{background:var(--ink);color:var(--cream);max-width:none}
+.info>div{max-width:1000px;margin:0 auto}
+dl{display:grid;grid-template-columns:auto 1fr;gap:16px 24px;margin-top:26px;font-size:18px}
+dt{color:var(--yellow);font-weight:900}
+.edit{background:rgba(255,201,40,.2);padding:0 6px;border-radius:6px}
+footer{text-align:center;padding:30px 20px 50px;font-size:14px;opacity:.7}
+.ko-t{display:none}
+body.ko .ja-t{display:none}body.ko .ko-t{display:inline}
+body.ko .ja-b{display:none}body.ko .ko-b{display:block}
+.ko-b{display:none}
+@media (prefers-reduced-motion:reduce){.mq span{animation:none}}
+</style></head>
+<body>
+<nav><b>🍗 K-FOOD TRIP</b><button id="lang">한국어</button></nav>
+
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="tag"><span class="ja-t">学園祭 限定販売</span><span class="ko-t">학교 축제 한정 판매</span></div>
+  <h1 class="disp">K-FOOD<em>TRIP</em></h1>
+  <p class="intro"><span class="ja-t">韓国式のチキンを直接体験できますよ!</span><span class="ko-t">한국식의 치킨을 직접 체험해볼 수 있어요!</span></p>
+  <p><span class="ja-t">ブリンクルチキンとヤンニョムチキンを販売します。揚げたてを、ぜひ食べに来てください。</span><span class="ko-t">뿌링클치킨과 양념치킨을 팝니다. 갓 튀긴 치킨, 먹으러 와!</span></p>
+  <img class="pic" src="yangnyeom.jpg" alt="">
+  <a class="cta" href="#menu"><span class="ja-t">メニューを見る ↓</span><span class="ko-t">메뉴 보기 ↓</span></a>
+</header>
+
+<div class="mq disp" aria-hidden="true"><span>🍗 BBURINKLE ✦ YANGNYEOM ✦ COLA ✦ 600円 ✦ 600円 ✦ 120円 🍗 BBURINKLE ✦ YANGNYEOM ✦ COLA ✦ 600円 ✦ 600円 ✦ 120円</span><span>🍗 BBURINKLE ✦ YANGNYEOM ✦ COLA ✦ 600円 ✦ 600円 ✦ 120円</span></div>
+
+<section id="menu">
+  <h2 class="disp"><span class="ja-t">メニュー</span><span class="ko-t">메뉴</span></h2>
+  <p class="lead"><span class="ja-t">どれもお手頃な価格です。</span><span class="ko-t">부담 없는 가격으로 준비했어.</span></p>
+  <div class="cards">
+    <article class="card">
+      <div class="ph"><img src="bburinkle.jpg" alt="" onerror="this.parentNode.classList.add('no')"><span class="ico">🧀</span></div>
+      <h3>ブリンクルチキン</h3><div class="ko">뿌링클치킨</div>
+      <p><span class="ja-t">チーズ風味のシーズニングをたっぷり。甘じょっぱくてクセになる味。</span><span class="ko-t">치즈맛 시즈닝을 듬뿍. 달짝짭짤해서 계속 손이 가는 맛.</span></p>
+      <div class="price"><b>600</b><span>円</span></div>
+    </article>
+    <article class="card y">
+      <div class="ph"><img src="yangnyeom.jpg" alt="" onerror="this.parentNode.classList.add('no')"><span class="ico">🌶️</span></div>
+      <h3>ヤンニョムチキン</h3><div class="ko">양념치킨</div>
+      <p><span class="ja-t">甘辛いタレをからめた定番の味。ご飯にもよく合う。</span><span class="ko-t">달콤매콤한 양념을 입힌 정석의 맛.</span></p>
+      <div class="price"><b>600</b><span>円</span></div>
+    </article>
+    <article class="card c">
+      <div class="ph"><img src="cola.jpg" alt="" onerror="this.parentNode.classList.add('no')"><span class="ico">🥤</span></div>
+      <h3>コーラ</h3><div class="ko">콜라</div>
+      <p><span class="ja-t">チキンのおともに。冷たいのを用意します。</span><span class="ko-t">치킨엔 콜라지. 시원하게 준비할게.</span></p>
+      <div class="price"><b>120</b><span>円 / <span class="ja-t">1本</span><span class="ko-t">1개</span></span></div>
+    </article>
+  </div>
+  <div class="set">
+    <div><b><span class="ja-t">チキン+コーラ</span><span class="ko-t">치킨 + 콜라</span></b><br><small><span class="ja-t">合計(セット割引はありません)</span><span class="ko-t">합계 (세트 할인은 없어)</span></small></div>
+    <span>720円</span>
+  </div>
+</section>
+
+<section class="info" style="max-width:none">
+ <div>
+  <h2 class="disp">K-FOOD TRIP</h2>
+  <p style="margin-top:14px;font-size:18px;line-height:1.8"><span class="ja-t">韓国の味を、学園祭でお届けします。売り切れ次第終了です。</span><span class="ko-t">한국의 맛을 축제에서 전해줄게. 재료 소진 시 종료야.</span></p>
+ </div>
+</section>
+
+<footer>© K-FOOD TRIP</footer>
+
+<script>
+const b=document.body,l=document.getElementById('lang');
+try{if(localStorage.lang==='ko')b.classList.add('ko')}catch(e){}
+const sync=()=>{const k=b.classList.contains('ko');l.textContent=k?'日本語':'한국어';document.documentElement.lang=k?'ko':'ja'};
+l.onclick=()=>{b.classList.toggle('ko');sync();try{localStorage.lang=b.classList.contains('ko')?'ko':'ja'}catch(e){}};
+sync();
+</script>
+</body></html>
